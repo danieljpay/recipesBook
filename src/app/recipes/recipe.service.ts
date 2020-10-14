@@ -4,8 +4,6 @@ import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.services';
 
-
-
 @Injectable()
 export class RecipeService {
     recipeSelected = new EventEmitter<Recipe>();
@@ -35,6 +33,10 @@ export class RecipeService {
 
     getRecipes() {
         return this.recipes.slice();
+    }
+
+    getRecipe(index: number) {
+        return this.recipes[index];
     }
 
     addIngredientsToShoppingList(ingredients: Ingredient[]) {
